@@ -95,4 +95,16 @@ The project is organized into the following main directories:
 - `integration_test/`: Contains integration tests.
 
 
+### Screenshots
+
+![Login Screen](screenshots/login.png)
+![Product Listing](https://github.com/user-attachments/assets/adcf82d4-c68d-4867-9c15-8581f201740e)
+![Product Details](screenshots/login.png)
+![Image](https://github.com/user-attachments/assets/a2fa7670-bf70-4932-9f51-ac9c13446726)
+![Wishlist](screenshots/wishlist.png)
+
+### Screen Recording
+
+[![Screen Recording](screenshots/screen_recording_thumbnail.png)](https://www.youtube.com/watch?v=your_video_id)
+
 
