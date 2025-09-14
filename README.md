@@ -15,10 +15,7 @@ A simple e-commerce app built with Flutter, featuring Firebase authentication, p
   - [Architecture and Design Decisions](#architecture-and-design-decisions)
 - [Folder Structure](#folder-structure)
 - [Adding Screenshots or Screen Recordings](#adding-screenshots-or-screen-recordings)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
+
 
 ## Features
 
