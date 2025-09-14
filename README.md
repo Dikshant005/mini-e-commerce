@@ -111,6 +111,6 @@ The project is organized into the following main directories:
 
 ### Screen Recording
 
-[[![Screen Recording](screenshots/screen_recording_thumbnail.png)](https://www.youtube.com/watch?v=your_video_id)](https://github.com/user-attachments/assets/6560e3ac-aca8-4e85-9aa6-318568392c09)
+[[![Screen Recording](https://github.com/user-attachments/assets/adcf82d4-c68d-4867-9c15-8581f201740e)](https://www.youtube.com/watch?v=your_video_id)](https://github.com/user-attachments/assets/6560e3ac-aca8-4e85-9aa6-318568392c09)
 
 
