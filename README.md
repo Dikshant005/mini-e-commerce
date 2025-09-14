@@ -1,16 +1,99 @@
-# my_shop_simple
+# My Shop Simple
 
-A new Flutter project.
+A simple e-commerce app built with Flutter, featuring Firebase authentication, product listing, cart management, and wishlist functionality.
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the App](#running-the-app)
+  - [Running Tests](#running-tests)
+- [Overview](#overview)
+  - [Features](#features-1)
+  - [Architecture and Design Decisions](#architecture-and-design-decisions)
+- [Folder Structure](#folder-structure)
+- [Adding Screenshots or Screen Recordings](#adding-screenshots-or-screen-recordings)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+
+## Features
+
+- **User Authentication**: Firebase-based login and registration.
+- **Product Listing**: Fetch and display products from a remote API.
+- **Offline Support**: Cache products using Hive for offline access.
+- **Cart Management**: Add and remove products from the cart.
+- **Wishlist**: Save favorite products to a wishlist.
+- **Dark Mode**: Toggle between light and dark themes.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK installed and configured.
+- Android Studio or VS Code for development.
+- Firebase project set up with authentication enabled.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/my_shop_simple.git
+2. Navigate to the project directory:
+   ```bash
+   cd my_shop_simple
+3. Install dependencies:
+    ```bash
+    flutter pub get
+4. Running the App:
+   Connect a device or start an emulator.
+    ```bash
+    flutter run
+### Running Tests
+ 1. Run unit tests:
+    ```bash
+    flutter test
+2. Run integration tests:
+    ```bash
+    flutter test integration_test/app_test.dart --dart-define=INTEGRATION_TEST=true
+
+## Overview
+### Features
+- User Authentication: Firebase-based login and registration.
+- Product Listing: Fetch and display products from a remote API.
+- Offline Support: Cache products using Hive for offline access.
+- Cart Management: Add and remove products from the cart.
+- Wishlist: Save favorite products to a wishlist.
+- Dark Mode: Toggle between light and dark themes.
+
+### Architecture and Design Decisions
+The project follows a modular architecture to ensure scalability and maintainability. Here are the key decisions:
+
+- State Management: The app uses the BLoC (Business Logic Component) pattern for state management. This pattern separates the business logic from the UI, making it easier to manage and test.
+- Dependency Injection: Dependency injection is implemented using the get_it package to manage dependencies throughout the app.
+- Networking: The dio package is used for making HTTP requests to fetch product data from a remote API.
+- Local Storage: The hive package is used for caching products to support offline functionality.
+- Routing: The app uses named routes for navigation, making it easier to manage and test navigation logic.
+
+## Folder Structure
+
+The project is organized into the following main directories:
+
+- `lib/`: Contains the main source code.
+  - `core/`: Core models and services.
+    - `models/`: Data models like `product.dart`.
+    - `services/`: Services like `cache_service.dart`.
+  - `features/`: Feature-specific logic and UI.
+    - `auth/`: Authentication-related logic and UI.
+    - `products/`: Product listing and details.
+    - `cart/`: Cart management.
+    - `wishlist/`: Wishlist management.
+  - `main.dart`: Entry point of the application.
+- `test/`: Contains unit and widget tests.
+  - `features/`: Tests for feature-specific logic.
+  - `widgets/`: Tests for custom widgets.
+- `integration_test/`: Contains integration tests.
+
