@@ -24,7 +24,7 @@ class WishlistPage extends StatelessWidget {
           }
           final ids = state.ids;
           if (ids.isEmpty) return const Center(child: Text('Wishlist is empty'));
-          // convert IDs → products
+          // convert ids → products
           final items = products.where((p) => ids.contains(p.id)).toList();
           return ListView.builder(
             itemCount: items.length,

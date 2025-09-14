@@ -13,19 +13,17 @@ void main() {
 
     print('Auto-login should be complete. Checking for GridView...');
 
-    /* ---- WAIT FOR PRODUCTS (skip login entirely) ---- */
+    // wait for products skip login
     try {
       await tester.pumpUntil(find.descendant(
         of: find.byType(GridView),
         matching: find.byType(Card),
-      ), timeout: Duration(seconds: 30)); // Increased timeout for debugging
-      print('GridView found.');
+      ), timeout: Duration(seconds: 30)); // increased timeout for debugging
     } catch (e) {
-      print('GridView not found within timeout: $e');
       rethrow; // Re-throw the exception to fail the test
     }
 
-    /* ---- TAP FIRST PRODUCT CARD ---- */
+    // tap first product card
     try {
       await tester.tap(find.descendant(
         of: find.byType(GridView),
@@ -38,7 +36,7 @@ void main() {
       rethrow; // Re-throw the exception to fail the test
     }
 
-    /* ---- VERIFY DETAIL PAGE ---- */
+    // verify detail page
     try {
       expect(find.byType(ProductDetailPage), findsOneWidget);
       print('ProductDetailPage found. Test passed.');

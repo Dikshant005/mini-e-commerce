@@ -59,7 +59,7 @@ class _AuthPageState extends State<AuthPage> {
                     style: TextStyle(color: Colors.white70, fontSize: 16),
                   ),
                   SizedBox(height: 48),
-                  // Email TextField
+                  // email text field
                   Container(
                     decoration: BoxDecoration(
                       color: Color(0xFF232230),
@@ -79,7 +79,7 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                   SizedBox(height: 18),
-                  // Password TextField
+                  // password text field
                   Container(
                     decoration: BoxDecoration(
                       color: Color(0xFF232230),
@@ -100,15 +100,13 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                   SizedBox(height: 8),
-                  // Forgot Password (only on login)
+                  // forgot password (only on login)
                   if (_isLogin)
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(
-                          onPressed: () {
-                            // Add forgot password logic if needed
-                          },
+                          onPressed: () {},
                           style: TextButton.styleFrom(padding: EdgeInsets.zero),
                           child: Text(
                             'Forgot Password',
@@ -118,7 +116,7 @@ class _AuthPageState extends State<AuthPage> {
                       ],
                     ),
                   SizedBox(height: 24),
-                  // Login/Register Button
+                  // login and register button
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -137,7 +135,6 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                   SizedBox(height: 24),
                   
-                  // Register/Sign in action
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

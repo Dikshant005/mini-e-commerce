@@ -1,24 +1,27 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import '../../core/models/product.dart';
-import '../../core/services/cache_service.dart'; // offline cache
+import '../../core/services/cache_service.dart'; 
 import 'products_event.dart';
 import 'products_state.dart';
 
 class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
-  final Dio _dio = Dio()..options.baseUrl = 'https://dummyjson.com';
-  int _skip = 0;
-  bool _reachEnd = false;
+  final Dio _dio;                               
+  int _skip = 0;                               
+  bool _reachEnd = false;                      
 
-  ProductsBloc() : super(ProductsInitial()) {
+  ProductsBloc({Dio? dio})                   
+      : _dio = dio ?? Dio()..options.baseUrl = 'https://dummyjson.com',
+        super(ProductsInitial()) {
     on<FetchProducts>(_onFetch);
     on<SearchProducts>(_onSearch);
     on<RefreshProducts>(_onRefresh);
   }
 
-  /* -------------------- pagination -------------------- */
+  // pagination
   Future<void> _onFetch(FetchProducts event, Emitter<ProductsState> emit) async {
     if (_reachEnd) return;
+    emit(ProductsLoading());
     try {
       final url = 'https://dummyjson.com/products?limit=10&skip=$_skip';
       final res = await _dio.get(url);
@@ -27,16 +30,16 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
           .toList();
       _reachEnd = list.length < 10;
       _skip += list.length;
-      CacheService.saveProducts(list); // SAVE to Hive
+      CacheService.saveProducts(list); // save to Hive
       emit(ProductsLoaded([...state.products, ...list], reachEnd: _reachEnd));
     } catch (e) {
-      // OFFLINE → read last cached list
+      // offline → read last cached list
       final cached = CacheService.getProducts();
       emit(ProductsLoaded(cached, reachEnd: true));
     }
   }
 
-  /* -------------------- search -------------------- */
+  // search
   Future<void> _onSearch(SearchProducts event, Emitter<ProductsState> emit) async {
     try {
       final url = 'https://dummyjson.com/products/search?q=${event.query}&limit=20';
@@ -50,7 +53,7 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     }
   }
 
-  /* -------------------- pull-to-refresh -------------------- */
+ // refresh 
   Future<void> _onRefresh(RefreshProducts event, Emitter<ProductsState> emit) async {
     _skip = 0;
     _reachEnd = false;

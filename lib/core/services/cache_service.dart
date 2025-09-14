@@ -7,7 +7,7 @@ class CacheService {
 
   static List<Product> getProducts() {
     final box = Hive.box<String>('products_cache');
-    final jsonList = box.get(_key, defaultValue: '[]')!; // ← add !
+    final jsonList = box.get(_key, defaultValue: '[]')!; 
     final List<dynamic> decoded = jsonDecode(jsonList);
     return decoded.map((e) => Product.fromJson(e)).toList();
   }

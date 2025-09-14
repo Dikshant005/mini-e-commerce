@@ -76,7 +76,7 @@ class ProductsPage extends StatelessWidget {
   }
 }
 
-/* -------------------- Product List with Refresh -------------------- */
+
 
 class ProductList extends StatefulWidget {
   const ProductList({Key? key}) : super(key: key);
@@ -101,7 +101,7 @@ class _ProductListState extends State<ProductList> {
     }
   }
 
-  /* ---------- pull-to-refresh ---------- */
+  // refresh
   Future<void> _refresh() async {
     context.read<ProductsBloc>().add(RefreshProducts());
   }
@@ -122,7 +122,7 @@ class _ProductListState extends State<ProductList> {
           child: GridView.builder(
             controller: _scroll,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 600, // Adjust this value as needed
+              maxCrossAxisExtent: 600, 
               childAspectRatio: 0.75,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,

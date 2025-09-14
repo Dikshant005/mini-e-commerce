@@ -5,7 +5,7 @@ class ThemeStorage {
   static const _key = 'themeMode';
   Future<ThemeMode> get() async {
     final prefs = await SharedPreferences.getInstance();
-    final index = prefs.getInt(_key) ?? 0; // 0 = system
+    final index = prefs.getInt(_key) ?? 0; 
     return ThemeMode.values[index];
   }
 

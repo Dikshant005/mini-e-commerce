@@ -1,3 +1,4 @@
+// lib/main.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -26,7 +27,7 @@ Future<void> main() async {
   await Hive.openBox<int>('wishlist');
   await Hive.openBox<String>('products_cache');
 
-  /* ---- INTEGRATION-TEST AUTO-LOGIN ---- */
+  // auto login for integration test
   if (kDebugMode && bool.fromEnvironment('INTEGRATION_TEST')) {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(

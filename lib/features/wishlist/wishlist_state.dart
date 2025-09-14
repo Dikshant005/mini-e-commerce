@@ -1,5 +1,5 @@
 abstract class WishlistState {
-  final List<int> ids; // only IDs
+  final List<int> ids; // only ids
   WishlistState(this.ids);
 }
 

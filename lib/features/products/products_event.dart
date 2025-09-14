@@ -7,4 +7,4 @@ class SearchProducts extends ProductsEvent {
   SearchProducts(this.query);
 }
 
-class RefreshProducts extends ProductsEvent {} // <-- pull-to-refresh
+class RefreshProducts extends ProductsEvent {} 
