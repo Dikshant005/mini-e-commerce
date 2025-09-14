@@ -93,8 +93,6 @@ The project is organized into the following main directories:
   - `features/`: Tests for feature-specific logic.
   - `widgets/`: Tests for custom widgets.
 - `integration_test/`: Contains integration tests.
-![Login](https://github.com/user-attachments/assets/0dcc4ea3-99f5-42c2-a0a2-5d6ff91e949e)
-![Products](https://github.com/user-attachments/assets/adcf82d4-c68d-4867-9c15-8581f201740e)
 
 
 
