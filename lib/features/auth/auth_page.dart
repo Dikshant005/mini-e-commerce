@@ -15,6 +15,7 @@ class _AuthPageState extends State<AuthPage> {
   final _email = TextEditingController();
   final _pass = TextEditingController();
   bool _isLogin = true;
+  bool _isObscured = true; // Track password visibility
 
   void _submit() {
     final bloc = context.read<AuthBloc>();
@@ -88,19 +89,28 @@ class _AuthPageState extends State<AuthPage> {
                     child: TextField(
                       key: const Key('passField'),
                       controller: _pass,
-                      obscureText: true,
+                      obscureText: _isObscured,
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Password',
                         hintStyle: TextStyle(color: Colors.white60),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
-                        suffixIcon: Icon(Icons.visibility_off, color: Colors.white60),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isObscured ? Icons.visibility_off : Icons.visibility,
+                            color: Colors.white60,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscured = !_isObscured;
+                            });
+                          },
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(height: 8),
-                  // forgot password (only on login)
                   if (_isLogin)
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -134,7 +144,6 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                   SizedBox(height: 24),
-                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -160,5 +169,3 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 }
-
-
