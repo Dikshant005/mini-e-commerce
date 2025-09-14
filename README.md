@@ -97,14 +97,20 @@ The project is organized into the following main directories:
 
 ### Screenshots
 
-![Login Screen](screenshots/login.png)
+![Login Screen](https://github.com/user-attachments/assets/a2fa7670-bf70-4932-9f51-ac9c13446726)
+
+
 ![Product Listing](https://github.com/user-attachments/assets/adcf82d4-c68d-4867-9c15-8581f201740e)
-![Product Details](screenshots/login.png)
-![Image](https://github.com/user-attachments/assets/a2fa7670-bf70-4932-9f51-ac9c13446726)
-![Wishlist](screenshots/wishlist.png)
+
+
+![Product Details](https://github.com/user-attachments/assets/d2e41d0f-a966-4144-9b61-928a8bb099f5)
+
+![Cart](https://github.com/user-attachments/assets/77c077bd-ed5a-479e-8f22-52ded541f007)
+
+![Wishlist](https://github.com/user-attachments/assets/a30726ff-1067-46af-bf89-7d87121a8405)
 
 ### Screen Recording
 
-[![Screen Recording](screenshots/screen_recording_thumbnail.png)](https://www.youtube.com/watch?v=your_video_id)
+[[![Screen Recording](screenshots/screen_recording_thumbnail.png)](https://www.youtube.com/watch?v=your_video_id)](https://github.com/user-attachments/assets/6560e3ac-aca8-4e85-9aa6-318568392c09)
 
 
